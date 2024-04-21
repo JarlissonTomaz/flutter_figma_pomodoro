@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_figma_pomodoro/timer.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HomeApp extends StatefulWidget {
@@ -17,16 +18,9 @@ class _HomeAppState extends State<HomeApp> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const SizedBox(height: 100),
-            Text(
-              '00:50',
-              style: GoogleFonts.inter(
-                fontSize: 64,
-                fontWeight: FontWeight.w200,
-                color: Colors.white,
-              ),
-            ),
-            const SizedBox(height: 100),
+            const SizedBox(height: 70),
+            const TimerReel(),
+            const SizedBox(height: 30),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -87,7 +81,7 @@ class _HomeAppState extends State<HomeApp> {
                 color: Colors.white,
               ),
             ),
-            const SizedBox(height: 150),
+            const SizedBox(height: 60),
             const Icon(
               Icons.check,
               color: Colors.white,

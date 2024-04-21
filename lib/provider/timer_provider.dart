@@ -73,8 +73,9 @@ class TimerProvider extends ChangeNotifier {
     return Text(
       '$minutes:$seconds',
       style: GoogleFonts.inter(
-        fontSize: 23,
+        fontSize: 64,
         color: Colors.white,
+        fontWeight: FontWeight.w200,
       ),
     );
   }
