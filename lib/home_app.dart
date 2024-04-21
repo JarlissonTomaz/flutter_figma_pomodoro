@@ -12,6 +12,7 @@ class _HomeAppState extends State<HomeApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFFBA4949),
       body: Center(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -22,6 +23,7 @@ class _HomeAppState extends State<HomeApp> {
               style: GoogleFonts.inter(
                 fontSize: 64,
                 fontWeight: FontWeight.w200,
+                color: Colors.white,
               ),
             ),
             const SizedBox(height: 100),
@@ -35,12 +37,12 @@ class _HomeAppState extends State<HomeApp> {
                     height: 50,
                     decoration: const BoxDecoration(
                       shape: BoxShape.circle,
-                      color: Colors.black,
+                      color: Colors.white,
                     ),
                     child: const Icon(
                       Icons.play_arrow_rounded,
                       size: 50,
-                      color: Colors.white,
+                      color: Color(0xFFBA4949),
                     ),
                   ),
                 ),
@@ -48,6 +50,7 @@ class _HomeAppState extends State<HomeApp> {
                 const Icon(
                   Icons.skip_next_rounded,
                   size: 48,
+                  color: Colors.white,
                 ),
               ],
             ),
@@ -55,13 +58,25 @@ class _HomeAppState extends State<HomeApp> {
             const Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(Icons.circle_outlined),
+                Icon(
+                  Icons.circle_outlined,
+                  color: Colors.white,
+                ),
                 SizedBox(width: 10),
-                Icon(Icons.circle_outlined),
+                Icon(
+                  Icons.circle_outlined,
+                  color: Colors.white,
+                ),
                 SizedBox(width: 10),
-                Icon(Icons.circle_outlined),
+                Icon(
+                  Icons.circle_outlined,
+                  color: Colors.white,
+                ),
                 SizedBox(width: 10),
-                Icon(Icons.circle_outlined),
+                Icon(
+                  Icons.circle_outlined,
+                  color: Colors.white,
+                ),
               ],
             ),
             const SizedBox(height: 100),
@@ -69,10 +84,14 @@ class _HomeAppState extends State<HomeApp> {
               'Focus Time',
               style: GoogleFonts.inter(
                 fontSize: 23,
+                color: Colors.white,
               ),
             ),
             const SizedBox(height: 150),
-            const Icon(Icons.check)
+            const Icon(
+              Icons.check,
+              color: Colors.white,
+            )
           ],
         ),
       ),
