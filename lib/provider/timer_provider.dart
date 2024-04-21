@@ -75,7 +75,7 @@ class TimerProvider extends ChangeNotifier {
       style: GoogleFonts.inter(
         fontSize: 64,
         color: Colors.white,
-        fontWeight: FontWeight.w200,
+        fontWeight: FontWeight.w300,
       ),
     );
   }

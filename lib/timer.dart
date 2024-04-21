@@ -35,8 +35,8 @@ class _TimerReelState extends State<TimerReel> {
                 startAngle: 270,
                 angleRange: 360,
                 customWidths: CustomSliderWidths(
-                  trackWidth: 2,
-                  progressBarWidth: 2,
+                  trackWidth: 4,
+                  progressBarWidth: 4,
                 ),
               ),
               min: 0,

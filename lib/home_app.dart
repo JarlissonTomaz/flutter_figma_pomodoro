@@ -20,15 +20,15 @@ class _HomeAppState extends State<HomeApp> {
           children: [
             const SizedBox(height: 70),
             const TimerReel(),
-            const SizedBox(height: 30),
+            const SizedBox(height: 40),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const SizedBox(width: 60),
                 GestureDetector(
                   child: Container(
-                    width: 50,
-                    height: 50,
+                    width: 60,
+                    height: 60,
                     decoration: const BoxDecoration(
                       shape: BoxShape.circle,
                       color: Colors.white,
@@ -43,48 +43,53 @@ class _HomeAppState extends State<HomeApp> {
                 const SizedBox(width: 10),
                 const Icon(
                   Icons.skip_next_rounded,
-                  size: 48,
+                  size: 50,
                   color: Colors.white,
                 ),
               ],
             ),
-            const SizedBox(height: 30),
+            const SizedBox(height: 40),
             const Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Icon(
                   Icons.circle_outlined,
                   color: Colors.white,
+                  size: 28,
                 ),
                 SizedBox(width: 10),
                 Icon(
                   Icons.circle_outlined,
                   color: Colors.white,
+                  size: 28,
                 ),
                 SizedBox(width: 10),
                 Icon(
                   Icons.circle_outlined,
                   color: Colors.white,
+                  size: 28,
                 ),
                 SizedBox(width: 10),
                 Icon(
                   Icons.circle_outlined,
                   color: Colors.white,
+                  size: 28,
                 ),
               ],
             ),
-            const SizedBox(height: 100),
+            const SizedBox(height: 80),
             Text(
               'Focus Time',
               style: GoogleFonts.inter(
-                fontSize: 23,
+                fontSize: 27,
                 color: Colors.white,
               ),
             ),
-            const SizedBox(height: 60),
+            const SizedBox(height: 80),
             const Icon(
-              Icons.check,
+              Icons.flag_circle_rounded,
               color: Colors.white,
+              size: 30,
             )
           ],
         ),
