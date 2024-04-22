@@ -4,8 +4,8 @@
 Bem-vindo ao **Flutter Pomodoro**!
 
 <div style="display: flex;">
-<img src="screenshots/tela1.png" alt="tela 1" width="300" style="margin-right: 10px;">
-<img src="screenshots/tela2.png" alt="tela 2" width="300" style="margin-right: 10px;">
+<img src="screenshots/tela1.png" alt="tela 1" width="300" style="margin-right: 50px;">
+<img src="screenshots/tela2.png" alt="tela 2" width="300" style="margin-right: 50px;">
 <img src="screenshots/tela3.png" alt="tela 3" width="300">
 </div>
 
