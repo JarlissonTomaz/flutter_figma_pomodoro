@@ -71,8 +71,8 @@ class TimerProvider extends ChangeNotifier {
     // Formata a string com horas, minutos e segundos
     return Text(
       '$minutes:$seconds',
-      style: GoogleFonts.inter(
-        fontSize: 64,
+      style: GoogleFonts.robotoMono(
+        fontSize: 60,
         color: Colors.white,
         fontWeight: FontWeight.w300,
       ),

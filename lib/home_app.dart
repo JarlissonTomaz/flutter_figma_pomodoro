@@ -227,7 +227,11 @@ class _HomeAppState extends State<HomeApp> {
                               ),
             const SizedBox(height: 80),
             Text(
-              '${countdownProvider.ciclo}',
+              countdownProvider.ciclo % 2 == 0
+                  ? 'Focus Time'
+                  : countdownProvider.focusCount == 7
+                      ? 'Long Break'
+                      : 'Short Break',
               style: GoogleFonts.inter(
                 fontSize: 27,
                 color: Colors.white,

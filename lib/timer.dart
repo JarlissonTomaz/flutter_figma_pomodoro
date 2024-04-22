@@ -27,7 +27,11 @@ class _TimerReelState extends State<TimerReel> {
               size: MediaQuery.of(context).size.width * 0.84,
               customColors: CustomSliderColors(
                 dotColor: Colors.transparent,
-                trackColor: Colors.white,
+                trackColor: countdownProvider.ciclo % 2 == 0
+                    ? const Color(0xFFBA4949)
+                    : countdownProvider.focusCount == 7
+                        ? const Color.fromARGB(255, 57, 112, 151)
+                        : const Color.fromARGB(255, 56, 133, 138),
                 progressBarColor: Colors.white,
                 shadowColor: Colors.grey.shade600,
               ),
@@ -46,6 +50,7 @@ class _TimerReelState extends State<TimerReel> {
             innerWidget: (percentage) => Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   countdownProvider.timeLeftString,
                 ],
