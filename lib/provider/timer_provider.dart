@@ -4,13 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class TimerProvider extends ChangeNotifier {
-  Duration duration = const Duration(seconds: 10);
+  Duration duration = const Duration(seconds: 25);
   bool isRunning = false;
   int ciclo = 0;
-  int workingTime = 10;
-  int restTime = 10;
-  int tempoTrabalho = 0;
-  int tempoDescanso = 0;
+  int workingTime = 25;
+  int restTime = 5;
   int focusCount = 0;
   String dropWork = '';
   String dropRest = '';
@@ -85,12 +83,14 @@ class TimerProvider extends ChangeNotifier {
       ciclo++;
       if (ciclo % 2 == 0) {
         duration = Duration(seconds: workingTime);
-        tempoTrabalho += workingTime;
       } else {
         duration = Duration(seconds: restTime);
-        tempoDescanso += restTime;
-        focusCount++;
+
+        if (focusCount == 8) {
+          focusCount = 0;
+        }
       }
+      focusCount++;
     }
   }
 

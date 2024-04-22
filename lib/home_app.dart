@@ -54,45 +54,168 @@ class _HomeAppState extends State<HomeApp> {
                   ),
                 ),
                 const SizedBox(width: 10),
-                const Icon(
-                  Icons.skip_next_rounded,
-                  size: 50,
-                  color: Colors.white,
-                ),
+                IconButton(
+                    onPressed: () {
+                      countdownProvider.timeStop();
+                    },
+                    icon: const Icon(
+                      Icons.skip_next_rounded,
+                      size: 50,
+                      color: Colors.white,
+                    )),
               ],
             ),
             const SizedBox(height: 40),
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  Icons.circle_outlined,
-                  color: Colors.white,
-                  size: 28,
-                ),
-                SizedBox(width: 10),
-                Icon(
-                  Icons.circle_outlined,
-                  color: Colors.white,
-                  size: 28,
-                ),
-                SizedBox(width: 10),
-                Icon(
-                  Icons.circle_outlined,
-                  color: Colors.white,
-                  size: 28,
-                ),
-                SizedBox(width: 10),
-                Icon(
-                  Icons.circle_outlined,
-                  color: Colors.white,
-                  size: 28,
-                ),
-              ],
-            ),
+            countdownProvider.focusCount == 1 ||
+                    countdownProvider.focusCount == 2
+                ? const Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.circle,
+                        color: Colors.white,
+                        size: 28,
+                      ),
+                      SizedBox(width: 10),
+                      Icon(
+                        Icons.circle_outlined,
+                        color: Colors.white,
+                        size: 28,
+                      ),
+                      SizedBox(width: 10),
+                      Icon(
+                        Icons.circle_outlined,
+                        color: Colors.white,
+                        size: 28,
+                      ),
+                      SizedBox(width: 10),
+                      Icon(
+                        Icons.circle_outlined,
+                        color: Colors.white,
+                        size: 28,
+                      ),
+                    ],
+                  )
+                : countdownProvider.focusCount == 3 ||
+                        countdownProvider.focusCount == 4
+                    ? const Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.circle,
+                            color: Colors.white,
+                            size: 28,
+                          ),
+                          SizedBox(width: 10),
+                          Icon(
+                            Icons.circle,
+                            color: Colors.white,
+                            size: 28,
+                          ),
+                          SizedBox(width: 10),
+                          Icon(
+                            Icons.circle_outlined,
+                            color: Colors.white,
+                            size: 28,
+                          ),
+                          SizedBox(width: 10),
+                          Icon(
+                            Icons.circle_outlined,
+                            color: Colors.white,
+                            size: 28,
+                          ),
+                        ],
+                      )
+                    : countdownProvider.focusCount == 5 ||
+                            countdownProvider.focusCount == 6
+                        ? const Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.circle,
+                                color: Colors.white,
+                                size: 28,
+                              ),
+                              SizedBox(width: 10),
+                              Icon(
+                                Icons.circle,
+                                color: Colors.white,
+                                size: 28,
+                              ),
+                              SizedBox(width: 10),
+                              Icon(
+                                Icons.circle,
+                                color: Colors.white,
+                                size: 28,
+                              ),
+                              SizedBox(width: 10),
+                              Icon(
+                                Icons.circle_outlined,
+                                color: Colors.white,
+                                size: 28,
+                              ),
+                            ],
+                          )
+                        : countdownProvider.focusCount == 7
+                            ? const Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Icon(
+                                    Icons.circle,
+                                    color: Colors.white,
+                                    size: 28,
+                                  ),
+                                  SizedBox(width: 10),
+                                  Icon(
+                                    Icons.circle,
+                                    color: Colors.white,
+                                    size: 28,
+                                  ),
+                                  SizedBox(width: 10),
+                                  Icon(
+                                    Icons.circle,
+                                    color: Colors.white,
+                                    size: 28,
+                                  ),
+                                  SizedBox(width: 10),
+                                  Icon(
+                                    Icons.circle,
+                                    color: Colors.white,
+                                    size: 28,
+                                  ),
+                                ],
+                              )
+                            : const Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Icon(
+                                    Icons.circle_outlined,
+                                    color: Colors.white,
+                                    size: 28,
+                                  ),
+                                  SizedBox(width: 10),
+                                  Icon(
+                                    Icons.circle_outlined,
+                                    color: Colors.white,
+                                    size: 28,
+                                  ),
+                                  SizedBox(width: 10),
+                                  Icon(
+                                    Icons.circle_outlined,
+                                    color: Colors.white,
+                                    size: 28,
+                                  ),
+                                  SizedBox(width: 10),
+                                  Icon(
+                                    Icons.circle_outlined,
+                                    color: Colors.white,
+                                    size: 28,
+                                  ),
+                                ],
+                              ),
             const SizedBox(height: 80),
             Text(
-              'Focus Time',
+              '${countdownProvider.ciclo}',
               style: GoogleFonts.inter(
                 fontSize: 27,
                 color: Colors.white,
