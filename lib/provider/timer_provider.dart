@@ -7,9 +7,9 @@ class TimerProvider extends ChangeNotifier {
   Duration duration = const Duration(seconds: 25);
   bool isRunning = false;
   int ciclo = 0;
-  int workingTime = 25;
-  int restTime = 15;
-  int restLongTime = 10;
+  int workingTime = 1500;
+  int restTime = 300;
+  int restLongTime = 900;
   int focusCount = 0;
   String dropWork = '';
   String dropRest = '';
@@ -71,7 +71,7 @@ class TimerProvider extends ChangeNotifier {
     // Formata a string com horas, minutos e segundos
     return Text(
       '$minutes:$seconds',
-      style: GoogleFonts.robotoMono(
+      style: GoogleFonts.azeretMono(
         fontSize: 60,
         color: Colors.white,
         fontWeight: FontWeight.w300,

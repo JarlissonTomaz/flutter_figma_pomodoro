@@ -45,7 +45,9 @@ class _TimerReelState extends State<TimerReel> {
             min: 0,
             max: countdownProvider.ciclo % 2 == 0
                 ? double.parse(countdownProvider.workingTime.toString())
-                : double.parse(countdownProvider.restTime.toString()),
+                : countdownProvider.focusCount == 7
+                    ? double.parse(countdownProvider.restLongTime.toString())
+                    : double.parse(countdownProvider.restTime.toString()),
             initialValue: countdownProvider.duration.inSeconds.toDouble(),
             innerWidget: (percentage) => Center(
               child: Column(
