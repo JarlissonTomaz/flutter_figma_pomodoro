@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_figma_pomodoro/provider/timer_provider.dart';
+import 'package:provider/provider.dart';
 import 'package:flutter_figma_pomodoro/timer.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -12,6 +14,8 @@ class HomeApp extends StatefulWidget {
 class _HomeAppState extends State<HomeApp> {
   @override
   Widget build(BuildContext context) {
+    final countdownProvider = Provider.of<TimerProvider>(context);
+
     return Scaffold(
       backgroundColor: const Color(0xFFBA4949),
       body: Center(
@@ -26,6 +30,9 @@ class _HomeAppState extends State<HomeApp> {
               children: [
                 const SizedBox(width: 60),
                 GestureDetector(
+                  onTap: () {
+                    countdownProvider.startStopTimer();
+                  },
                   child: Container(
                     width: 60,
                     height: 60,
@@ -33,11 +40,17 @@ class _HomeAppState extends State<HomeApp> {
                       shape: BoxShape.circle,
                       color: Colors.white,
                     ),
-                    child: const Icon(
-                      Icons.play_arrow_rounded,
-                      size: 50,
-                      color: Color(0xFFBA4949),
-                    ),
+                    child: !countdownProvider.isRunning
+                        ? const Icon(
+                            Icons.play_arrow_rounded,
+                            size: 50,
+                            color: Color(0xFFBA4949),
+                          )
+                        : const Icon(
+                            Icons.pause_rounded,
+                            size: 50,
+                            color: Color(0xFFBA4949),
+                          ),
                   ),
                 ),
                 const SizedBox(width: 10),

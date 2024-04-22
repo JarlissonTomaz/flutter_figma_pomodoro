@@ -15,47 +15,45 @@ class _TimerReelState extends State<TimerReel> {
   Widget build(BuildContext context) {
     final countdownProvider = Provider.of<TimerProvider>(context);
 
-    return SizedBox(
-      width: MediaQuery.of(context).size.width,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          SizedBox(
-            width: MediaQuery.of(context).size.width * 0.60,
-            height: MediaQuery.of(context).size.width * 0.60,
-            child: SleekCircularSlider(
-              appearance: CircularSliderAppearance(
-                size: MediaQuery.of(context).size.width * 0.84,
-                customColors: CustomSliderColors(
-                  dotColor: Colors.transparent,
-                  trackColor: Colors.white,
-                  progressBarColor: Colors.white,
-                ),
-                startAngle: 270,
-                angleRange: 360,
-                customWidths: CustomSliderWidths(
-                  trackWidth: 4,
-                  progressBarWidth: 4,
-                ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        SizedBox(
+          width: MediaQuery.of(context).size.width * 0.60,
+          height: MediaQuery.of(context).size.width * 0.60,
+          child: SleekCircularSlider(
+            appearance: CircularSliderAppearance(
+              size: MediaQuery.of(context).size.width * 0.84,
+              customColors: CustomSliderColors(
+                dotColor: Colors.transparent,
+                trackColor: Colors.white,
+                progressBarColor: Colors.white,
+                shadowColor: Colors.grey.shade600,
               ),
-              min: 0,
-              max: countdownProvider.ciclo % 2 == 0
-                  ? double.parse(countdownProvider.workingTime.toString())
-                  : double.parse(countdownProvider.restTime.toString()),
-              initialValue: countdownProvider.duration.inSeconds.toDouble(),
-              innerWidget: (percentage) => Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    countdownProvider.timeLeftString,
-                  ],
-                ),
+              startAngle: 270,
+              angleRange: 360,
+              customWidths: CustomSliderWidths(
+                trackWidth: 4,
+                progressBarWidth: 4,
+              ),
+            ),
+            min: 0,
+            max: countdownProvider.ciclo % 2 == 0
+                ? double.parse(countdownProvider.workingTime.toString())
+                : double.parse(countdownProvider.restTime.toString()),
+            initialValue: countdownProvider.duration.inSeconds.toDouble(),
+            innerWidget: (percentage) => Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  countdownProvider.timeLeftString,
+                ],
               ),
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
