@@ -3,6 +3,8 @@
 
 Bem-vindo ao **Flutter Pomodoro**!
 
+![Texto alternativo](screenshots/tela1.png)
+
 O **Flutter Pomodoro** é um aplicativo de gerenciamento de tempo desenvolvido com Flutter, trazendo para você a praticidade e a eficiência do método Pomodoro diretamente para o seu dispositivo móvel. Este projeto foi inspirado em um design encontrado no Figma(https://www.figma.com/community/file/1235238751721231862/pomodoro-app) e totalmente desenvolvido por mim, utilizando o poderoso framework Flutter.
 
 ## Por que Flutter Pomodoro?
