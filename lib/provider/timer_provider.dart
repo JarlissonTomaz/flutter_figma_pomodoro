@@ -9,7 +9,7 @@ class TimerProvider extends ChangeNotifier {
   int ciclo = 0;
   int workingTime = 1500;
   int restTime = 300;
-  int restLongTime = 900;
+  int restLongTime = 1200;
   int focusCount = 0;
   String dropWork = '';
   String dropRest = '';

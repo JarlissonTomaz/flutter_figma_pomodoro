@@ -32,7 +32,13 @@ class _HomeAppState extends State<HomeApp> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const SizedBox(width: 60),
+                IconButton(
+                    onPressed: () {},
+                    icon: const Icon(
+                      Icons.skip_next_rounded,
+                      size: 50,
+                      color: Colors.transparent,
+                    )),
                 GestureDetector(
                   onTap: () {
                     countdownProvider.startStopTimer();
@@ -59,13 +65,12 @@ class _HomeAppState extends State<HomeApp> {
                             size: 50,
                             color: countdownProvider.ciclo % 2 == 0
                                 ? const Color(0xFFBA4949)
-                                : countdownProvider.focusCount == 7
+                                : countdownProvider.focusCount == 8
                                     ? const Color.fromARGB(255, 57, 112, 151)
                                     : const Color.fromARGB(255, 56, 133, 138),
                           ),
                   ),
                 ),
-                const SizedBox(width: 10),
                 IconButton(
                     onPressed: () {
                       countdownProvider.timeStop();
