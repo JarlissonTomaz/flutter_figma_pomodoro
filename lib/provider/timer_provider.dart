@@ -8,7 +8,8 @@ class TimerProvider extends ChangeNotifier {
   bool isRunning = false;
   int ciclo = 0;
   int workingTime = 25;
-  int restTime = 5;
+  int restTime = 15;
+  int restLongTime = 10;
   int focusCount = 0;
   String dropWork = '';
   String dropRest = '';
@@ -79,18 +80,20 @@ class TimerProvider extends ChangeNotifier {
   }
 
   void timeIsUp() {
+    focusCount++;
     if (duration == const Duration(seconds: 0)) {
       ciclo++;
       if (ciclo % 2 == 0) {
         duration = Duration(seconds: workingTime);
       } else {
         duration = Duration(seconds: restTime);
-
-        if (focusCount == 8) {
-          focusCount = 0;
-        }
       }
-      focusCount++;
+    }
+    if (focusCount == 7) {
+      duration = Duration(seconds: restLongTime);
+    }
+    if (focusCount == 8) {
+      focusCount = 0;
     }
   }
 

@@ -17,7 +17,11 @@ class _HomeAppState extends State<HomeApp> {
     final countdownProvider = Provider.of<TimerProvider>(context);
 
     return Scaffold(
-      backgroundColor: const Color(0xFFBA4949),
+      backgroundColor: countdownProvider.ciclo % 2 == 0
+          ? const Color(0xFFBA4949)
+          : countdownProvider.focusCount == 7
+              ? const Color.fromARGB(255, 57, 112, 151)
+              : const Color.fromARGB(255, 56, 133, 138),
       body: Center(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -41,15 +45,23 @@ class _HomeAppState extends State<HomeApp> {
                       color: Colors.white,
                     ),
                     child: !countdownProvider.isRunning
-                        ? const Icon(
+                        ? Icon(
                             Icons.play_arrow_rounded,
                             size: 50,
-                            color: Color(0xFFBA4949),
+                            color: countdownProvider.ciclo % 2 == 0
+                                ? const Color(0xFFBA4949)
+                                : countdownProvider.focusCount == 7
+                                    ? const Color.fromARGB(255, 57, 112, 151)
+                                    : const Color.fromARGB(255, 56, 133, 138),
                           )
-                        : const Icon(
+                        : Icon(
                             Icons.pause_rounded,
                             size: 50,
-                            color: Color(0xFFBA4949),
+                            color: countdownProvider.ciclo % 2 == 0
+                                ? const Color(0xFFBA4949)
+                                : countdownProvider.focusCount == 7
+                                    ? const Color.fromARGB(255, 57, 112, 151)
+                                    : const Color.fromARGB(255, 56, 133, 138),
                           ),
                   ),
                 ),
