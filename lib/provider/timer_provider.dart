@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class TimerProvider extends ChangeNotifier {
-  Duration duration = const Duration(seconds: 25);
+  Duration duration = const Duration(seconds: 1500);
   bool isRunning = false;
   int ciclo = 0;
   int workingTime = 1500;
@@ -71,10 +71,10 @@ class TimerProvider extends ChangeNotifier {
     // Formata a string com horas, minutos e segundos
     return Text(
       '$minutes:$seconds',
-      style: GoogleFonts.azeretMono(
+      style: GoogleFonts.chivoMono(
         fontSize: 60,
         color: Colors.white,
-        fontWeight: FontWeight.w300,
+        fontWeight: FontWeight.w200,
       ),
     );
   }
